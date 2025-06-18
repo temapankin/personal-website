@@ -1,0 +1,4 @@
+:root {
+  --global-bg-color: #fff;               /* Pure white (body background) */
+  --global-footer-bg-color: #f2f3f3;     /* Light gray (footer only) */
+}
