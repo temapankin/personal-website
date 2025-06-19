@@ -11,6 +11,50 @@
   margin-bottom: 4em;
 }
 
+/* Standard Book (Regular) */
+@font-face {
+  font-family: 'Standard';
+  src: url('fonts/Standard-Book.woff2') format('woff2'),
+       url('fonts/Standard-Book.woff') format('woff'),
+       url('fonts/Standard-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Improves loading performance */
+}
+
+/* Standard Book Italic */
+@font-face {
+  font-family: 'Standard';
+  src: url('fonts/Standard-BookItalic.woff2') format('woff2'),
+       url('fonts/Standard-BookItalic.woff') format('woff'),
+       url('fonts/Standard-BookItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Standard Bold */
+@font-face {
+  font-family: 'Standard';
+  src: url('fonts/Standard-Bold.woff2') format('woff2'),
+       url('fonts/Standard-Bold.woff') format('woff'),
+       url('fonts/Standard-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Standard Bold Italic */
+@font-face {
+  font-family: 'Standard';
+  src: url('fonts/Standard-BoldItalic.woff2') format('woff2'),
+       url('fonts/Standard-BoldItalic.woff') format('woff'),
+       url('fonts/Standard-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 html {
     box-sizing: border-box;
     background-color: var(--global-bg-color);
@@ -21,7 +65,8 @@ html {
 }
 
 body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Standard",-apple-system, Roboto, sans-serif;
+    font-weight: 400;
     color: var(--global-text-color);
     background-color: var(--global-bg-color);
     margin: 0;
@@ -136,8 +181,8 @@ body {
 h1,h2,h3,h4,h5,h6 {
     margin: 2em 0 1em; 
     line-height: 1.3; 
-    font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",Arial,sans-serif;
-    font-weight: bold
+    font-family: "Standard", -apple-system, Roboto, sans-serif;
+    font-weight: 700;
 }
 
 h1 {
