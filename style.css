@@ -44,6 +44,11 @@
   font-display: swap;
 }
 
+::selection {
+  background: black;
+  color: white;
+}
+
 /* Standard Bold Italic */
 @font-face {
   font-family: 'Standard';
@@ -237,6 +242,7 @@ li {
 
 .page a:hover {
     text-decoration: underline; 
+    
 }
 .highlight-link-hunter {
     color: inherit;
