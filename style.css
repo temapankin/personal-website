@@ -591,3 +591,298 @@ img, embed, iframe {
     flex-direction: column; 
     gap: 0.1em; 
 }
+
+
+
+/* Add this to your existing style.css file */
+
+/* ===== SMOOTH SCROLLING ===== */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    background-color: var(--global-bg-color);
+    font-size: 17px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: 100%;
+}
+
+/* ===== CONTACT LINK ANIMATIONS ===== */
+
+/* Desktop sidebar contact links */
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    padding: 0.4em 0;
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    justify-self: flex-start;
+    position: relative;
+}
+
+/* Add subtle slide-in animation on hover */
+.contact-link:hover {
+    color: var(--global-text-color-light);
+    transform: translateX(5px);
+}
+
+/* Icon rotation on hover */
+.contact-link:hover i {
+    transform: scale(1.15) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+.contact-link i {
+    width: 20px;
+    text-align: left;
+    font-size: 1.1em;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+/* Underline animation for links */
+.contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--global-text-color-light);
+    transition: width 0.3s ease;
+}
+
+.contact-link:hover::after {
+    width: 100%;
+}
+
+/* ===== MOBILE POPUP ANIMATIONS ===== */
+
+/* Fade and slide in animation for mobile popup */
+.mobile-links-popup {
+    display: none;
+    flex-direction: column;
+    gap: 0.1em;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    margin-top: 0.4em;
+    min-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(149,157,165,0.18);
+    padding: 0.2em 0;
+    z-index: 102;
+    
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeSlideIn 0.3s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile popup link hover with background slide */
+.mobile-links-popup .contact-link {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.97em;
+    gap: 0.6em;
+    padding: 0.38em 1em;
+    border-radius: 5px;
+    white-space: nowrap;
+    color: var(--global-text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-self: left;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slide background effect */
+.mobile-links-popup .contact-link::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #f6f8fa;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.mobile-links-popup .contact-link:hover::before {
+    left: 0;
+}
+
+.mobile-links-popup .contact-link:hover {
+    color: #222;
+}
+
+/* Icon bounce on hover */
+.mobile-links-popup .contact-link:hover i {
+    animation: iconBounce 0.5s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* ===== AUTHOR PHOTO SUBTLE ANIMATION ===== */
+.author-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0px solid var(--global-dark-border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* ===== PAGE SECTION FADE IN (Optional) ===== */
+/* Add this class to sections you want to animate on load */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== BUTTON ANIMATIONS ===== */
+.mobile-links-toggle {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    color: #444;
+    font-size: 0.97em;
+    font-weight: 500;
+    padding: 0.18em 1em;
+    height: 32px;
+    min-width: 70px;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 101;
+    cursor: pointer;
+}
+
+.mobile-links-toggle:hover,
+.mobile-links-toggle:focus {
+    background: #222;
+    color: #fff;
+    border: 1px solid #222;
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.mobile-links-toggle:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ===== LINK HOVER ANIMATIONS (Enhanced) ===== */
+.highlight-link-hunter,
+.highlight-link-rutgers,
+.highlight-link-heat {
+    transition: all 0.3s ease;
+}
+
+/* Add subtle pulse effect when hovering */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.highlight-link-hunter:hover,
+.highlight-link-rutgers:hover,
+.highlight-link-heat:hover {
+    animation: pulse 0.5s ease;
+}
+
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: var(--global-text-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--global-text-color-light);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 800px) {
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.3em;
+    }
+}
