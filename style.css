@@ -409,6 +409,43 @@ li {
     text-align: center;
 }
 
+/* Compact mobile contact icons under name */
+.mobile-contact-icons {
+    display: flex;
+    gap: 0.6em;
+    margin-top: 0.35em;
+}
+.mobile-contact-icons .contact-link {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: var(--global-text-color);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.mobile-contact-icons .contact-link:hover,
+.mobile-contact-icons .contact-link:focus {
+    background: #f6f8fa;
+    color: #222;
+    transform: translateY(-1px);
+}
+.mobile-contact-icons .contact-link i {
+    font-size: 1.1em;
+    width: auto;
+    text-align: center;
+}
+
+/* Hide the old mobile popup UI everywhere */
+.mobile-links-container,
+.mobile-links-toggle,
+.mobile-links-popup {
+    display: none !important;
+}
+
 /* --- Responsive Embeds --- */
 img, embed, iframe {
     max-width: 100%;
@@ -762,24 +799,6 @@ html {
     transform: scale(1.05);
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
-
-/* ===== PAGE SECTION FADE IN (Optional) ===== */
-/* Add this class to sections you want to animate on load */
-.fade-in {
-    animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* ===== BUTTON ANIMATIONS ===== */
 .mobile-links-toggle {
     background: #fff;
