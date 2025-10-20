@@ -235,6 +235,58 @@ li {
     line-height: 1.5;
 }
 
+
+/* Links: default grey, revert to default text color on hover */
+.page a {
+  color: var(--global-text-color-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.page a:hover,
+.page a:focus {
+  color: var(--global-text-color); /* your default text color */
+  /*text-decoration: underline;*/
+}
+
+/* Red links: grey by default, become red on hover */
+.highlight-link-rutgers,
+.highlight-link-heat {
+  color: var(--global-text-color-light) !important;
+  text-decoration: none;
+  background: none; /* remove previous gradient fill */
+  transition: color 0.2s ease;
+}
+
+.highlight-link-rutgers:hover,
+.highlight-link-rutgers:focus {
+  color: #CC0033 !important; /* Rutgers red */
+  /*text-decoration: underline;*/
+}
+
+.highlight-link-heat:hover,
+.highlight-link-heat:focus {
+  color: #D76852 !important; /* Heat red/orange */
+  /*text-decoration: underline;*/
+}
+
+/* Optional: non-red highlight links behave like normal links */
+.highlight-link-hunter {
+  color: var(--global-text-color-light) !important;;
+  text-decoration: none;
+  background: none;
+  transition: color 0.2s ease;
+}
+
+.highlight-link-hunter:hover,
+.highlight-link-hunter:focus {
+  color: #5f259f !important;
+  /*text-decoration: underline;*/
+  
+}
+
+
+/* 
 .page a {
     color: inherit;         
     text-decoration: none; 
@@ -242,7 +294,8 @@ li {
 
 .page a:hover {
     text-decoration: underline; 
-    
+
+
 }
 .highlight-link-hunter {
     color: inherit;
@@ -284,7 +337,7 @@ li {
 .highlight-link-heat:hover {
     background-size: 100% 100%;
     color: white !important;
-}
+} */
 
 /* Mobile header hidden by default */
 .mobile-header {
