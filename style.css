@@ -3,7 +3,7 @@
   --global-footer-bg-color: #f2f3f3;    
   --global-dark-border-color: #dadada;
   --global-text-color: #494e52;
-  --global-text-color-light: #9ba1a6;
+  --global-text-color-light: #8e959f;
 }
 
 .head {
@@ -70,13 +70,14 @@ html {
 }
 
 body {
-    font-family: "Standard",-apple-system, Roboto, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, -apple-system, Roboto, sans-serif;
     font-weight: 400;
+    font-size: 16px;
     color: var(--global-text-color);
     background-color: var(--global-bg-color);
     margin: 0;
     padding: 0;
-    line-height: 1.65; 
+    line-height: 1.6; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -186,7 +187,7 @@ body {
 h1,h2,h3,h4,h5,h6 {
     margin: 2em 0 1em; 
     line-height: 1.3; 
-    font-family: "Standard", -apple-system, Roboto, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, -apple-system, Roboto, sans-serif;
     font-weight: bold;
 }
 
