@@ -7,8 +7,38 @@
 }
 
 .head {
-  text-align: center;
-  margin-bottom: 4em;
+    text-align: left;
+    margin-bottom: 4em;
+    margin-left: -20em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5em; 
+}
+
+.head .site-title {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.head-nav {
+    margin-left: auto;
+}
+
+.head-link {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--global-text-color);
+    text-decoration: none;
+    padding: 0.25em 0.6em;
+    border-radius: 6px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.head-link:hover,
+.head-link:focus {
+    color: #222;
+    background-color: #f2f3f3;
 }
 
 /* Standard Book (Regular) */
