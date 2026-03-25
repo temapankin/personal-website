@@ -14,12 +14,18 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://artempankin.me/" />
     <link rel="canonical" href="https://artempankin.me/" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" crossorigin="anonymous" referrerpolicy="no-referrer" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" /></noscript>
     <!-- Academicons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css" crossorigin="anonymous" /></noscript>
 
      <script type="application/ld+json">
         {
@@ -43,7 +49,7 @@
 
         <!-- Mobile header -->
         <div class="mobile-header">
-            <img src="my_photo.JPG" alt="Portrait of Artem Pankin" class="mobile-photo">
+            <img src="my_photo.JPG" alt="Portrait of Artem Pankin" class="mobile-photo" loading="lazy" decoding="async" width="80" height="80">
             <div class="mobile-header-info">
                 <span class="mobile-name">Artem Pankin</span>
                 <span class="mobile-bio">MCRP student at Rutgers</span>
@@ -61,7 +67,7 @@
             <!-- Sidebar -->
             <aside class="sidebar">
                 <div class="author-avatar">
-                    <img src="my_photo.JPG" alt="Portrait of Artem Pankin" class="author-photo">
+                    <img src="my_photo.JPG" alt="Portrait of Artem Pankin" class="author-photo" decoding="async" width="200" height="200">
                 </div>
                 <div class="author-info">
                     <h2 class="author-name">Artem Pankin</h2>

@@ -42,56 +42,13 @@
     background-color: #f2f3f3;
 }
 
-/* Standard Book (Regular) */
-@font-face {
-  font-family: 'Standard';
-  src: url('fonts/Standard-Book.woff2') format('woff2'),
-       url('fonts/Standard-Book.woff') format('woff'),
-       url('fonts/Standard-Book.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap; /* Improves loading performance */
-}
-
-/* Standard Book Italic */
-@font-face {
-  font-family: 'Standard';
-  src: url('fonts/Standard-BookItalic.woff2') format('woff2'),
-       url('fonts/Standard-BookItalic.woff') format('woff'),
-       url('fonts/Standard-BookItalic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* Standard Bold */
-@font-face {
-  font-family: 'Standard';
-  src: url('fonts/Standard-Bold.woff2') format('woff2'),
-       url('fonts/Standard-Bold.woff') format('woff'),
-       url('fonts/Standard-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 ::selection {
   background: black;
   color: white;
 }
 
-/* Standard Bold Italic */
-@font-face {
-  font-family: 'Standard';
-  src: url('fonts/Standard-BoldItalic.woff2') format('woff2'),
-       url('fonts/Standard-BoldItalic.woff') format('woff'),
-       url('fonts/Standard-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
 html {
+    scroll-behavior: smooth;
     box-sizing: border-box;
     background-color: var(--global-bg-color);
     font-size: 17px;
@@ -178,29 +135,6 @@ body {
     flex-direction: column;
     gap: 0.01em;
     align-items: flex-start; 
-}
-
-.contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.8em;
-    padding: 0.4em 0;
-    color: var(--global-text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.9em;
-    justify-self: flex-start; 
-}
-
-.contact-link i {
-    width: 20px;
-    text-align: left; 
-    font-size: 1.1em;
-    flex-shrink: 0; 
-}
-
-.contact-link:hover {
-    color: var(--global-text-color-light);
 }
 
 /* Main content area */
@@ -361,60 +295,6 @@ li {
   /*text-decoration: underline;*/
   
 }
-
-
-/* 
-.page a {
-    color: inherit;         
-    text-decoration: none; 
-}
-
-.page a:hover {
-    text-decoration: underline; 
-
-
-}
-.highlight-link-hunter {
-    color: inherit;
-    text-decoration: none;
-    background: linear-gradient(#5f259f 0 0) no-repeat;
-    background-size: 0% 100%;
-    transition: background-size 0.3s ease;
-    background-position: 0 100%;
-}
-
-.highlight-link-hunter:hover {
-    background-size: 100% 100%;
-    color: white;
-}
-
-.highlight-link-rutgers {
-    color: inherit;
-    text-decoration: none;
-    background: linear-gradient(#CC0033 0 0) no-repeat;
-    background-size: 0% 100%;
-    transition: background-size 0.3s ease;
-    background-position: 0 100%;
-}
-
-.highlight-link-rutgers:hover {
-    background-size: 100% 100%;
-    color: white;
-}
-
-.highlight-link-heat {
-    color: #D76852 !important;
-    text-decoration: none;
-    background: linear-gradient(#D76852 0 0) no-repeat;
-    background-size: 0% 100%;
-    transition: background-size 0.3s ease;
-    background-position: 0 100%;
-}
-
-.highlight-link-heat:hover {
-    background-size: 100% 100%;
-    color: white !important;
-} */
 
 /* Mobile header hidden by default */
 .mobile-header {
@@ -722,61 +602,6 @@ img, embed, iframe {
     margin-bottom: 2em;
 }
 
-/* Responsive tables, images, and embeds */
-img, embed, iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.page embed,
-.page iframe {
-    width: 100%;
-    min-height: 500px;
-    height: 800px;
-    max-height: 90vh;
-    display: block;
-    margin: 0 auto;
-}
-
-@media (max-width: 800px) {
-    .page embed,
-    .page iframe {
-        display: none !important;
-    }
-}
-
-.mobile-links-container {
-    position: relative; 
-    display: inline-block; 
-}
-
-.mobile-links-toggle {
-    cursor: pointer; 
-}
-
-.mobile-links-toggle[aria-expanded="true"] + .mobile-links-popup,
-.mobile-links-popup.active {
-    display: flex; 
-    flex-direction: column; 
-    gap: 0.1em; 
-}
-
-
-
-/* Add this to your existing style.css file */
-
-/* ===== SMOOTH SCROLLING ===== */
-html {
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    background-color: var(--global-bg-color);
-    font-size: 17px;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    height: 100%;
-}
-
 /* ===== CONTACT LINK ANIMATIONS ===== */
 
 /* Desktop sidebar contact links */
@@ -793,16 +618,9 @@ html {
     position: relative;
 }
 
-/* Add subtle slide-in animation on hover */
 .contact-link:hover {
     color: var(--global-text-color-light);
     transform: translateX(5px);
-}
-
-/* Icon rotation on hover */
-.contact-link:hover i {
-    transform: scale(1.15) rotate(5deg);
-    transition: transform 0.3s ease;
 }
 
 .contact-link i {
@@ -813,7 +631,11 @@ html {
     transition: transform 0.3s ease;
 }
 
-/* Underline animation for links */
+.contact-link:hover i {
+    transform: scale(1.15) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
 .contact-link::after {
     content: '';
     position: absolute;
@@ -827,91 +649,6 @@ html {
 
 .contact-link:hover::after {
     width: 100%;
-}
-
-/* ===== MOBILE POPUP ANIMATIONS ===== */
-
-/* Fade and slide in animation for mobile popup */
-.mobile-links-popup {
-    display: none;
-    flex-direction: column;
-    gap: 0.1em;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: auto;
-    margin-top: 0.4em;
-    min-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    background: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    box-shadow: 0 8px 24px rgba(149,157,165,0.18);
-    padding: 0.2em 0;
-    z-index: 102;
-    
-    /* Animation properties */
-    opacity: 0;
-    transform: translateY(-10px);
-    animation: fadeSlideIn 0.3s ease forwards;
-}
-
-@keyframes fadeSlideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile popup link hover with background slide */
-.mobile-links-popup .contact-link {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 0.97em;
-    gap: 0.6em;
-    padding: 0.38em 1em;
-    border-radius: 5px;
-    white-space: nowrap;
-    color: var(--global-text-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-self: left;
-    transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Slide background effect */
-.mobile-links-popup .contact-link::before {
-    content: '';
-    position: absolute;
-    left: -100%;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #f6f8fa;
-    transition: left 0.3s ease;
-    z-index: -1;
-}
-
-.mobile-links-popup .contact-link:hover::before {
-    left: 0;
-}
-
-.mobile-links-popup .contact-link:hover {
-    color: #222;
-}
-
-/* Icon bounce on hover */
-.mobile-links-popup .contact-link:hover i {
-    animation: iconBounce 0.5s ease;
-}
-
-@keyframes iconBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
 }
 
 /* ===== AUTHOR PHOTO SUBTLE ANIMATION ===== */
@@ -933,41 +670,6 @@ html {
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 /* ===== BUTTON ANIMATIONS ===== */
-.mobile-links-toggle {
-    background: #fff;
-    border: 1px solid #d0d7de;
-    border-radius: 6px;
-    color: #444;
-    font-size: 0.97em;
-    font-weight: 500;
-    padding: 0.18em 1em;
-    height: 32px;
-    min-width: 70px;
-    box-shadow: none;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 101;
-    cursor: pointer;
-}
-
-.mobile-links-toggle:hover,
-.mobile-links-toggle:focus {
-    background: #222;
-    color: #fff;
-    border: 1px solid #222;
-    outline: none;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.mobile-links-toggle:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
 /* ===== LINK HOVER ANIMATIONS (Enhanced) ===== */
 .highlight-link-hunter,
 .highlight-link-rutgers,
