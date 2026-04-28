@@ -6,9 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTopBtn.setAttribute('aria-label', 'Back to top');
     document.body.appendChild(backToTopBtn);
 
+    let ticking = false;
     window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) backToTopBtn.classList.add('visible');
-        else backToTopBtn.classList.remove('visible');
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                backToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 
     backToTopBtn.addEventListener('click', function() {
