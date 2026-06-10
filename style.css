@@ -1,9 +1,10 @@
 :root {
-  --global-bg-color: #fff;              
-  --global-footer-bg-color: #f2f3f3;    
+  --global-bg-color: #FCFCFA;           /* was #fff — warm off-white */
+  --global-footer-bg-color: #f2f3f3;
   --global-dark-border-color: #dadada;
-  --global-text-color: #494e52;
+  --global-text-color: #21242A;         /* was #494e52 — near-black */
   --global-text-color-light: #8e959f;
+  --global-link-underline: #C9C6BF;     /* quiet link underline */
 }
 
 .head {
@@ -270,53 +271,49 @@ li {
 }
 
 
-/* Links: default grey, revert to default text color on hover */
+/* Links: subtle underline by default, accent color on hover */
 .page a {
-  color: var(--global-text-color-light);
-  text-decoration: none;
-  transition: color 0.2s ease;
+  color: var(--global-text-color);
+  text-decoration: underline;
+  text-decoration-color: var(--global-link-underline);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .page a:hover,
 .page a:focus {
-  color: var(--global-text-color); /* your default text color */
-  /*text-decoration: underline;*/
+  color: #CC0033;
+  text-decoration-color: #CC0033;
 }
 
-/* Red links: grey by default, become red on hover */
+/* Highlight links: same hierarchy as normal links, brand color on hover */
 .highlight-link-rutgers,
-.highlight-link-heat {
-  color: var(--global-text-color-light) !important;
-  text-decoration: none;
-  background: none; /* remove previous gradient fill */
-  transition: color 0.2s ease;
+.highlight-link-heat,
+.highlight-link-hunter {
+  color: var(--global-text-color) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--global-link-underline);
+  text-underline-offset: 3px;
+  background: none;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .highlight-link-rutgers:hover,
 .highlight-link-rutgers:focus {
   color: #CC0033 !important; /* Rutgers red */
-  /*text-decoration: underline;*/
+  text-decoration-color: #CC0033 !important;
 }
 
 .highlight-link-heat:hover,
 .highlight-link-heat:focus {
   color: #D76852 !important; /* Heat red/orange */
-  /*text-decoration: underline;*/
-}
-
-/* Optional: non-red highlight links behave like normal links */
-.highlight-link-hunter {
-  color: var(--global-text-color-light) !important;;
-  text-decoration: none;
-  background: none;
-  transition: color 0.2s ease;
+  text-decoration-color: #D76852 !important;
 }
 
 .highlight-link-hunter:hover,
 .highlight-link-hunter:focus {
   color: #5f259f !important;
-  /*text-decoration: underline;*/
-  
+  text-decoration-color: #5f259f !important;
 }
 
 /* Mobile header hidden by default */
@@ -680,6 +677,7 @@ img, embed, iframe {
 
 .project-title a:hover,
 .project-title a:focus {
+    color: var(--global-text-color);
     text-decoration: underline;
 }
 
@@ -719,6 +717,7 @@ img, embed, iframe {
 
 .project-links a:hover,
 .project-links a:focus {
+    color: var(--global-text-color);
     text-decoration: underline;
 }
 
@@ -739,6 +738,7 @@ html[data-theme="dark"] {
     --global-dark-border-color: #3a3a3a;
     --global-text-color: #d4d4d4;
     --global-text-color-light: #8e959f;
+    --global-link-underline: #4A4E55;
 }
 
 html[data-theme="dark"] .mobile-header {
@@ -774,6 +774,7 @@ html[data-theme="dark"] .conference-banner {
         --global-dark-border-color: #3a3a3a;
         --global-text-color: #d4d4d4;
         --global-text-color-light: #8e959f;
+        --global-link-underline: #4A4E55;
     }
 
     html:not([data-theme="light"]) .mobile-header {
@@ -801,4 +802,37 @@ html[data-theme="dark"] .conference-banner {
         border-color: rgba(204, 0, 51, 0.35);
         background: rgba(204, 0, 51, 0.12);
     }
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1em;
+  font-size: 0.97em;
+  line-height: 1.6;
+}
+
+.pub-year {
+  color: var(--global-text-color-light);
+  font-variant-numeric: tabular-nums;
+}
+
+.pub-item strong { font-weight: 600; }
+
+.pub-intro {
+  color: var(--global-text-color-light);
+  font-size: 0.94em;
+  margin-top: -0.5em;
+}
+
+@media (max-width: 480px) {
+  .pub-item { grid-template-columns: 52px 1fr; gap: 0.8em; }
 }
