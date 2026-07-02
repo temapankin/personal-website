@@ -53,4 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Obfuscated email — assembled at runtime so HTML-only scrapers don't see the address
+    const emailUser = 'artem.pankin', emailDomain = 'rutgers.edu';
+    document.querySelectorAll('.js-email').forEach(function(link) {
+        link.href = 'mailto:' + emailUser + '@' + emailDomain;
+    });
 });
