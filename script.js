@@ -57,9 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Obfuscated email — assembled at runtime so HTML-only scrapers don't see the address
-    const emailUser = 'artem.pankin', emailDomain = 'rutgers.edu';
-    const emailAddress = emailUser + '@' + emailDomain;
+    // Obfuscated email — base64-encoded so the address isn't readable in source,
+    // then assembled at runtime so HTML-only scrapers never see it either.
+    const emailAddress = atob('YXJ0ZW0ucGFua2luQHJ1dGdlcnMuZWR1');   // artem.pankin@rutgers.edu
+    const [emailUser, emailDomain] = emailAddress.split('@');
     document.querySelectorAll('.js-email').forEach(function(link) {
         link.href = 'mailto:' + emailAddress;
         const text = link.querySelector('.js-email-text');
